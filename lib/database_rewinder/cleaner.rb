@@ -63,7 +63,7 @@ module DatabaseRewinder
 
       ar_conn.disable_referential_integrity do
         tables.each do |table_name|
-          ar_conn.execute "DELETE FROM #{ar_conn.quote_table_name(table_name)};"
+          ar_conn.execute "TRUNCATE FROM #{ar_conn.quote_table_name(table_name)};"
         end
       end
     end
